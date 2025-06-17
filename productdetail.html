@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product Detail</title>
+	<link rel="stylesheet" href="css/style.css?_v=20250617154434">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">Закрыть</button>
+					<div class="popup__content__history">
+						<div class="popup__content__history__text">
+							<h3 class="popup__content__history__text__title">History of Bid</h3>
+							<p class="popup__content__history__text__date">Oct 14, 2022</p>
+						</div>
+						<div class="popup__content__history__bids">
+							<div class="popup__content__history__bids__item">
+								<div class="popup__content__history__bids__item__info">
+									<div class="popup__content__history__bids__item__info__box">
+										<img class="popup__content__history__bids__item__info__box__img" src="img/avatarbid.svg" alt="">
+									</div>
+									<div class="popup__content__history__bids__item__info__text">
+										<h3 class="popup__content__history__bids__item__info__text__username">Repo</h3>
+										<p class="popup__content__history__bids__item__info__text__date">May 17, 2022 at 12:08</p>
+									</div>
+								</div>
+								<h3 class="popup__content__history__bids__item__value">1.75</h3>
+							</div>
+							<div class="popup__content__history__bids__item">
+								<div class="popup__content__history__bids__item__info">
+									<div class="popup__content__history__bids__item__info__box">
+										<img class="popup__content__history__bids__item__info__box__img" src="img/avatarbid1.svg" alt="">
+									</div>
+									<div class="popup__content__history__bids__item__info__text">
+										<h3 class="popup__content__history__bids__item__info__text__username">Travo</h3>
+										<p class="popup__content__history__bids__item__info__text__date">May 16, 2022 at 12:08</p>
+									</div>
+								</div>
+								<h3 class="popup__content__history__bids__item__value">1.57</h3>
+							</div>
+							<div class="popup__content__history__bids__item">
+								<div class="popup__content__history__bids__item__info">
+									<div class="popup__content__history__bids__item__info__box">
+										<img class="popup__content__history__bids__item__info__box__img" src="img/avatarbid2.svg" alt="">
+									</div>
+									<div class="popup__content__history__bids__item__info__text">
+										<h3 class="popup__content__history__bids__item__info__text__username">Jennifer</h3>
+										<p class="popup__content__history__bids__item__info__text__date">May 16, 2022 at 6:08</p>
+									</div>
+								</div>
+								<h3 class="popup__content__history__bids__item__value">1.44</h3>
+							</div>
+						</div>
+						<div class="popup__content__your__bid">
+							<h3 class="popup__content__your__bid__title">Your Bid</h3>
+							<div class="popup__content__your__bid__currency__input">
+								<button class="popup__content__your__bid__currency__button">ETH</button>
+								<input type="text" class="popup__content__your__bid__input__field" placeholder="0.00">
+								<ul class="popup__content__your__bid__currency__list hidden">
+									<li>BTC</li>
+									<li>ETH</li>
+									<li>USDT</li>
+								</ul>
+							</div>
+							<button class="popup__content__your__bid__submit" type="submit"><span>Submit</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header class="header">
+			<div class="header__container">
+				<nav class="header__nav">
+					<div class="header__nav__logo">
+						<a href="index.html"><img src="img/logo.svg" alt="DiveSea Logo"></a>
+					</div>
+					<ul>
+						<li><a href="discover.html">DISCOVER</a></li>
+						<li><a href="creators.html">CREATORS</a></li>
+						<li><a href="#sell">SELL</a></li>
+						<li><a href="stats.html">STATS</a></li>
+					</ul>
+				</nav>
+				<div class="header__search">
+					<input type="text" placeholder="Search Art Work / Creator" />
+					<!-- <button class="header__search-button"> -->
+					<!-- </button> -->
+				</div>
+				<div class="header__wallet">
+					<a href="connect.html" class="header__wallet-button">Connect Wallet</a>
+				</div>
+			</div>
+		</header>
+		<div class="product-detail">
+			<div class="product-detail__container">
+				<div class="product-detail__back">
+					<a href="discover.html" class="product-detail__back__button">
+						<h1 class="product-detail__back__button__title">Product Detail</h1>
+					</a>
+				</div>
+				<div class="product-detail__main">
+					<aside class="product-detail__main__aside">
+						<img class="product-detail__main__aside__img" src="img/nftdetail.png" alt="">
+					</aside>
+					<article class="product-detail__main__article">
+						<h1 class="product-detail__main__article__title">Project Sun-Glass</h1>
+						<p class="product-detail__main__article__text">A collection of 10,000 utility-enabled PFPs that feature a richly diverse and unique pool of rarity-powered traits.</p>
+						<div class="product-detail__main__article__owners">
+							<div class="product-detail__main__article__owners__creator">
+								<img class="product-detail__main__article__owners__creator__img" src="img/creator.svg" alt="">
+								<div class="product-detail__main__article__owners__creator__text">
+									<p class="product-detail__main__article__owners__creator__text__description">Created By</p>
+									<h3 class="product-detail__main__article__owners__creator__text__name">Perperzon</h3>
+								</div>
+							</div>
+							<div class="product-detail__main__article__owners__owner">
+								<img class="product-detail__main__article__owners__owner__img" src="img/owner.svg" alt="">
+								<div class="product-detail__main__article__owners__owner__text">
+									<p class="product-detail__main__article__owners__owner__text__description">Owned By</p>
+									<h3 class="product-detail__main__article__owners__owner__text__name">Videz</h3>
+								</div>
+							</div>
+						</div>
+						<div class="product-detail__main__article__bid__info">
+							<div class="product-detail__main__article__bid__info__price">
+								<p class="product-detail__main__article__bid__info__price__text">Current bid</p>
+								<h2 class="product-detail__main__article__bid__info__price__value">1.75</h2>
+							</div>
+							<div class="product-detail__main__article__bid__info__end__in">
+								<p class="product-detail__main__article__bid__info__end__in__text">End in</p>
+								<p class="product-detail__main__article__bid__info__end__in__date">Jun 17, 2023 at 05:08</p>
+							</div>
+						</div>
+						<button data-popup="#popup" type="button" class="product-detail__main__article__button"><span class="product-detail__main__article__button__text">Place Bid</span></button>
+					</article>
+				</div>
+			</div>
+		</div>
+		<div class="from-creator">
+			<div class="from-creator__container">
+				<div class="from-creator__title">
+					<h2 class="from-creator__title__text">From Creator</h2>
+				</div>
+				<div class="from-creator__cards">
+					<div class="from-creator__cards__card">
+						<div class="from-creator__cards__card__box">
+							<img class="from-creator__cards__card__box__img" src="img/fromcreator.png" alt="">
+							<h2 class="from-creator__cards__card__box__title">Perperzon</h2>
+							<div class="from-creator__cards__card__box__bottom">
+								<div class="from-creator__cards__card__box__bottom__text">
+									<p class="from-creator__cards__card__box__bottom__text__main">Sun-Glass</p>
+									<div class="from-creator__cards__card__box__bottom__text__price">
+										<p class="from-creator__cards__card__box__bottom__text__price__number">16.4</p>
+										<p class="from-creator__cards__card__box__bottom__text__price__likes">200</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="from-creator__cards__card">
+						<div class="from-creator__cards__card__box">
+							<img class="from-creator__cards__card__box__img" src="img/fromcreator1.png" alt="">
+							<h2 class="from-creator__cards__card__box__title">Perperzon</h2>
+							<div class="from-creator__cards__card__box__bottom">
+								<div class="from-creator__cards__card__box__bottom__text">
+									<p class="from-creator__cards__card__box__bottom__text__main">Sun-Glass</p>
+									<div class="from-creator__cards__card__box__bottom__text__price">
+										<p class="from-creator__cards__card__box__bottom__text__price__number">16.4</p>
+										<p class="from-creator__cards__card__box__bottom__text__price__likes">200</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="from-creator__cards__card">
+						<div class="from-creator__cards__card__box">
+							<img class="from-creator__cards__card__box__img" src="img/fromcreator2.png" alt="">
+							<h2 class="from-creator__cards__card__box__title">Perperzon</h2>
+							<div class="from-creator__cards__card__box__bottom">
+								<div class="from-creator__cards__card__box__bottom__text">
+									<p class="from-creator__cards__card__box__bottom__text__main">Sun-Glass</p>
+									<div class="from-creator__cards__card__box__bottom__text__price">
+										<p class="from-creator__cards__card__box__bottom__text__price__number">16.4</p>
+										<p class="from-creator__cards__card__box__bottom__text__price__likes">200</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="from-creator__cards__card">
+						<div class="from-creator__cards__card__box">
+							<img class="from-creator__cards__card__box__img" src="img/fromcreator3.png" alt="">
+							<h2 class="from-creator__cards__card__box__title">Perperzon</h2>
+							<div class="from-creator__cards__card__box__bottom">
+								<div class="from-creator__cards__card__box__bottom__text">
+									<p class="from-creator__cards__card__box__bottom__text__main">Sun-Glass</p>
+									<div class="from-creator__cards__card__box__bottom__text__price">
+										<p class="from-creator__cards__card__box__bottom__text__price__number">16.4</p>
+										<p class="from-creator__cards__card__box__bottom__text__price__likes">200</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="from-creator__cards__card">
+						<div class="from-creator__cards__card__box">
+							<img class="from-creator__cards__card__box__img" src="img/fromcreator4.png" alt="">
+							<h2 class="from-creator__cards__card__box__title">Perperzon</h2>
+							<div class="from-creator__cards__card__box__bottom">
+								<div class="from-creator__cards__card__box__bottom__text">
+									<p class="from-creator__cards__card__box__bottom__text__main">Sun-Glass</p>
+									<div class="from-creator__cards__card__box__bottom__text__price">
+										<p class="from-creator__cards__card__box__bottom__text__price__number">16.4</p>
+										<p class="from-creator__cards__card__box__bottom__text__price__likes">200</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__box">
+					<div class="footer__box__img">
+						<a href="#" class="footer__box__img__text"><img class="footer__box__img__logo" src="img/logowhite.svg" alt="">DiveSea</a>
+					</div>
+					<div class="footer__box__links">
+						<a href="#home" class="footer__box__links__link">Privacy Policy</a>
+						<a href="#explore" class="footer__box__links__link">Term & Conditions</a>
+						<a href="#about" class="footer__box__links__link">About Us</a>
+						<a href="#contact" class="footer__box__links__link">Contact</a>
+					</div>
+				</div>
+				<div class="footer__lower__section">
+					<div class="footer__lower__section__container">
+						<p class="footer__lower__section__text">© 2023 EATLY All Rights Reserved.</p>
+						<div class="footer__lower__section__socials">
+							<a href="https://www.instagram.com/vlad.cfg/" class="footer__lower__section__socials__link"><img src="img/insta.svg" alt=""></a>
+							<a href="#linkedin" class="footer__lower__section__socials__link"><img src="img/linkedin.svg" alt=""></a>
+							<a href="#facebook" class="footer__lower__section__socials__link"><img src="img/facebook.svg" alt=""></a>
+							<a href="#twitter" class="footer__lower__section__socials__link"><img src="img/twitter.svg" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20250617154434"></script>
+</body>
+
+</html>
