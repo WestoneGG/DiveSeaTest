@@ -427,7 +427,7 @@
       P
     );
   }
-  var I = {
+  var k = {
     on(e, t, s) {
       const i = this;
       if (!i.eventsListeners || i.destroyed) return i;
@@ -514,7 +514,7 @@
       );
     },
   };
-  const k = (e, t, s) => {
+  const I = (e, t, s) => {
     t && !e.classList.contains(s)
       ? e.classList.add(s)
       : !t && e.classList.contains(s) && e.classList.remove(s);
@@ -524,7 +524,7 @@
       ? e.classList.add(s)
       : !t && e.classList.contains(s) && e.classList.remove(s);
   };
-  const D = (e, t) => {
+  const _ = (e, t) => {
       if (!e || e.destroyed || !e.params) return;
       const s = t.closest(
         e.isElement ? "swiper-slide" : `.${e.params.slideClass}`,
@@ -547,7 +547,7 @@
           t && t.remove();
       }
     },
-    _ = (e, t) => {
+    D = (e, t) => {
       if (!e.slides[t]) return;
       const s = e.slides[t].querySelector('[loading="lazy"]');
       s && s.removeAttribute("loading");
@@ -569,7 +569,7 @@
         return (
           r.push(...Array.from({ length: t }).map((e, t) => s + i + t)),
           void e.slides.forEach((t, s) => {
-            r.includes(t.column) && _(e, s);
+            r.includes(t.column) && D(e, s);
           })
         );
       }
@@ -577,11 +577,11 @@
       if (e.params.rewind || e.params.loop)
         for (let i = a - t; i <= r + t; i += 1) {
           const t = ((i % s) + s) % s;
-          (t < a || t > r) && _(e, t);
+          (t < a || t > r) && D(e, t);
         }
       else
         for (let i = Math.max(a - t, 0); i <= Math.min(r + t, s - 1); i += 1)
-          i !== a && (i > r || i < a) && _(e, i);
+          i !== a && (i > r || i < a) && D(e, i);
     };
   var H = {
     updateSize: function () {
@@ -915,8 +915,8 @@
             (m > 1 && m <= t.size) ||
             (u <= 0 && m >= t.size);
         f && (t.visibleSlides.push(o), t.visibleSlidesIndexes.push(e)),
-          k(o, f, s.slideVisibleClass),
-          k(o, h, s.slideFullyVisibleClass),
+          I(o, f, s.slideVisibleClass),
+          I(o, h, s.slideFullyVisibleClass),
           (o.progress = a ? -c : c),
           (o.originalProgress = a ? -p : p);
       }
@@ -2447,7 +2447,7 @@
   }
   function K(e) {
     const t = this;
-    D(t, e.target),
+    _(t, e.target),
       t.params.cssMode ||
         ("auto" !== t.params.slidesPerView && !t.params.autoHeight) ||
         t.update();
@@ -2613,7 +2613,7 @@
     };
   }
   const se = {
-      eventsEmitter: I,
+      eventsEmitter: k,
       update: H,
       translate: B,
       transition: {
@@ -3095,7 +3095,7 @@
       if (
         (s.breakpoints && e.setBreakpoint(),
         [...e.el.querySelectorAll('[loading="lazy"]')].forEach((t) => {
-          t.complete && D(e, t);
+          t.complete && _(e, t);
         }),
         e.updateSize(),
         e.updateSlides(),
@@ -3231,9 +3231,9 @@
         t.isElement && s.push(...t.hostEl.querySelectorAll('[loading="lazy"]')),
         s.forEach((e) => {
           e.complete
-            ? D(t, e)
+            ? _(t, e)
             : e.addEventListener("load", (e) => {
-                D(t, e.target);
+                _(t, e.target);
               });
         }),
         G(t),
@@ -5378,8 +5378,8 @@
         if (!M(e) || !C(e)) return;
         const i = t.zoom;
         if (!g.imageEl) return;
-        if (!v.isTouched || !g.slideEl) return void (s && k(e));
-        if (s) return void k(e);
+        if (!v.isTouched || !g.slideEl) return void (s && I(e));
+        if (s) return void I(e);
         v.isMoved ||
           ((v.width = g.imageEl.offsetWidth || g.imageEl.clientWidth),
           (v.height = g.imageEl.offsetHeight || g.imageEl.clientHeight),
@@ -5466,7 +5466,7 @@
           (b.prevTime = Date.now()),
           (g.imageWrapEl.style.transform = `translate3d(${v.currentX}px, ${v.currentY}px,0)`);
       }
-      function I() {
+      function k() {
         const e = t.zoom;
         g.slideEl &&
           t.activeIndex !== t.slides.indexOf(g.slideEl) &&
@@ -5483,7 +5483,7 @@
           (g.originX = 0),
           (g.originY = 0));
       }
-      function k(e) {
+      function I(e) {
         if (c <= 1 || !g.imageWrapEl) return;
         if (!M(e) || !C(e)) return;
         const t = n.getComputedStyle(g.imageWrapEl).transform,
@@ -5564,9 +5564,9 @@
           (r = void 0),
           (v.touchesStart.x = void 0),
           (v.touchesStart.y = void 0));
-        const I = T();
-        (s.scale = $ || I),
-          (c = $ || I),
+        const k = T();
+        (s.scale = $ || k),
+          (c = $ || k),
           !e || (1 === c && $)
             ? ((u = 0), (m = 0))
             : ((P = g.slideEl.offsetWidth),
@@ -5602,7 +5602,7 @@
           (g.imageEl.style.transitionDuration = "300ms"),
           (g.imageEl.style.transform = `translate3d(0,0,0) scale(${s.scale})`);
       }
-      function D() {
+      function _() {
         const e = t.zoom,
           s = t.params.zoom;
         if (!g.slideEl) {
@@ -5642,9 +5642,9 @@
             ((m = { x: 0, y: 0 }),
             u && ((u = !1), (v.startX = 0), (v.startY = 0))));
       }
-      function _(e) {
+      function D(e) {
         const s = t.zoom;
-        s.scale && 1 !== s.scale ? D() : z(e);
+        s.scale && 1 !== s.scale ? _() : z(e);
       }
       function G() {
         return {
@@ -5746,20 +5746,20 @@
             t.params.zoom.enabled &&
             t.zoom.enabled &&
             t.params.zoom.toggle &&
-            _(s);
+            D(s);
         }),
         i("transitionEnd", () => {
-          t.zoom.enabled && t.params.zoom.enabled && I();
+          t.zoom.enabled && t.params.zoom.enabled && k();
         }),
         i("slideChange", () => {
-          t.zoom.enabled && t.params.zoom.enabled && t.params.cssMode && I();
+          t.zoom.enabled && t.params.zoom.enabled && t.params.cssMode && k();
         }),
         Object.assign(t.zoom, {
           enable: H,
           disable: B,
           in: z,
-          out: D,
-          toggle: _,
+          out: _,
+          toggle: D,
         });
     },
     function (e) {
@@ -7648,7 +7648,7 @@
             320: { slidesPerView: 1, spaceBetween: 0, autoHeight: !0 },
             768: { slidesPerView: 2, spaceBetween: 20 },
             992: { slidesPerView: 3, spaceBetween: 20 },
-            1268: { slidesPerView: 5, spaceBetween: 30 },
+            1460: { slidesPerView: 5, spaceBetween: 30 },
           },
           on: {},
         });
@@ -8122,5 +8122,28 @@
           })(t),
         );
       });
+    }),
+    document.addEventListener("DOMContentLoaded", () => {
+      const e = document.querySelector(".header__nav__burger"),
+        t = document.querySelector(".header__nav__menu");
+      e.addEventListener("click", () => {
+        t.classList.contains("active")
+          ? (t.classList.add("closing"),
+            setTimeout(() => {
+              t.classList.remove("active", "closing");
+            }, 300))
+          : t.classList.add("active"),
+          e.classList.toggle("active");
+      }),
+        document.addEventListener("click", (s) => {
+          e.contains(s.target) ||
+            t.contains(s.target) ||
+            (t.classList.contains("active") &&
+              (t.classList.add("closing"),
+              setTimeout(() => {
+                t.classList.remove("active", "closing");
+              }, 300)),
+            e.classList.remove("active"));
+        });
     });
 })();
