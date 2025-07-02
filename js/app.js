@@ -427,7 +427,7 @@
       P
     );
   }
-  var _ = {
+  var k = {
     on(e, t, s) {
       const i = this;
       if (!i.eventsListeners || i.destroyed) return i;
@@ -514,7 +514,7 @@
       );
     },
   };
-  const k = (e, t, s) => {
+  const _ = (e, t, s) => {
     t && !e.classList.contains(s)
       ? e.classList.add(s)
       : !t && e.classList.contains(s) && e.classList.remove(s);
@@ -552,7 +552,7 @@
       const s = e.slides[t].querySelector('[loading="lazy"]');
       s && s.removeAttribute("loading");
     },
-    q = (e) => {
+    G = (e) => {
       if (!e || e.destroyed || !e.params) return;
       let t = e.params.lazyPreloadPrevNext;
       const s = e.slides.length;
@@ -583,7 +583,7 @@
         for (let i = Math.max(a - t, 0); i <= Math.min(r + t, s - 1); i += 1)
           i !== a && (i > r || i < a) && D(e, i);
     };
-  var G = {
+  var H = {
     updateSize: function () {
       const e = this;
       let t, s;
@@ -915,8 +915,8 @@
             (m > 1 && m <= t.size) ||
             (u <= 0 && m >= t.size);
         f && (t.visibleSlides.push(o), t.visibleSlidesIndexes.push(e)),
-          k(o, f, s.slideVisibleClass),
-          k(o, h, s.slideFullyVisibleClass),
+          _(o, f, s.slideVisibleClass),
+          _(o, h, s.slideFullyVisibleClass),
           (o.progress = a ? -c : c),
           (o.originalProgress = a ? -p : p);
       }
@@ -1075,7 +1075,7 @@
         previousIndex: r,
         activeIndex: d,
       }),
-        t.initialized && q(t),
+        t.initialized && G(t),
         t.emit("activeIndexChange"),
         t.emit("snapIndexChange"),
         (t.initialized || t.params.runCallbacksOnInit) &&
@@ -1119,7 +1119,7 @@
           s.slideToClickedSlide();
     },
   };
-  var H = {
+  var q = {
     getTranslate: function (e) {
       void 0 === e && (e = this.isHorizontal() ? "x" : "y");
       const { params: t, rtlTranslate: s, translate: i, wrapperEl: a } = this;
@@ -1592,7 +1592,7 @@
       } else e.slideTo(r);
     },
   };
-  var N = {
+  var Y = {
     loopCreate: function (e, t) {
       const s = this,
         { params: i, slidesEl: a } = s;
@@ -1855,7 +1855,7 @@
         e.slideTo(e.realIndex, 0);
     },
   };
-  function Y(e, t, s) {
+  function N(e, t, s) {
     const i = r(),
       { params: a } = e,
       n = a.edgeSwipeDetection,
@@ -1879,7 +1879,7 @@
       "touchstart" === a.type &&
         1 === a.targetTouches.length &&
         (n.touchId = a.targetTouches[0].identifier);
-    if ("touchstart" === a.type) return void Y(t, a, a.targetTouches[0].pageX);
+    if ("touchstart" === a.type) return void N(t, a, a.targetTouches[0].pageX);
     const { params: l, touches: d, enabled: c } = t;
     if (!c) return;
     if (!l.simulateTouch && "mouse" === a.pointerType) return;
@@ -1943,7 +1943,7 @@
     (d.currentX = a.pageX), (d.currentY = a.pageY);
     const g = d.currentX,
       v = d.currentY;
-    if (!Y(t, a, g)) return;
+    if (!N(t, a, g)) return;
     Object.assign(n, {
       isTouched: !0,
       isMoved: !1,
@@ -2613,9 +2613,9 @@
     };
   }
   const se = {
-      eventsEmitter: _,
-      update: G,
-      translate: H,
+      eventsEmitter: k,
+      update: H,
+      translate: q,
       transition: {
         setTransition: function (e, t) {
           const s = this;
@@ -2643,7 +2643,7 @@
         },
       },
       slide: X,
-      loop: N,
+      loop: Y,
       grabCursor: {
         setGrabCursor: function (e) {
           const t = this;
@@ -3236,9 +3236,9 @@
                 z(t, e.target);
               });
         }),
-        q(t),
+        G(t),
         (t.initialized = !0),
-        q(t),
+        G(t),
         t.emit("init"),
         t.emit("afterInit"),
         t
@@ -5378,8 +5378,8 @@
         if (!M(e) || !C(e)) return;
         const i = t.zoom;
         if (!g.imageEl) return;
-        if (!v.isTouched || !g.slideEl) return void (s && k(e));
-        if (s) return void k(e);
+        if (!v.isTouched || !g.slideEl) return void (s && _(e));
+        if (s) return void _(e);
         v.isMoved ||
           ((v.width = g.imageEl.offsetWidth || g.imageEl.clientWidth),
           (v.height = g.imageEl.offsetHeight || g.imageEl.clientHeight),
@@ -5466,7 +5466,7 @@
           (b.prevTime = Date.now()),
           (g.imageWrapEl.style.transform = `translate3d(${v.currentX}px, ${v.currentY}px,0)`);
       }
-      function _() {
+      function k() {
         const e = t.zoom;
         g.slideEl &&
           t.activeIndex !== t.slides.indexOf(g.slideEl) &&
@@ -5483,7 +5483,7 @@
           (g.originX = 0),
           (g.originY = 0));
       }
-      function k(e) {
+      function _(e) {
         if (c <= 1 || !g.imageWrapEl) return;
         if (!M(e) || !C(e)) return;
         const t = n.getComputedStyle(g.imageWrapEl).transform,
@@ -5564,9 +5564,9 @@
           (r = void 0),
           (v.touchesStart.x = void 0),
           (v.touchesStart.y = void 0));
-        const _ = T();
-        (s.scale = $ || _),
-          (c = $ || _),
+        const k = T();
+        (s.scale = $ || k),
+          (c = $ || k),
           !e || (1 === c && $)
             ? ((u = 0), (m = 0))
             : ((P = g.slideEl.offsetWidth),
@@ -5646,7 +5646,7 @@
         const s = t.zoom;
         s.scale && 1 !== s.scale ? z() : I(e);
       }
-      function q() {
+      function G() {
         return {
           passiveListener: !!t.params.passiveListeners && {
             passive: !0,
@@ -5658,11 +5658,11 @@
           },
         };
       }
-      function G() {
+      function H() {
         const e = t.zoom;
         if (e.enabled) return;
         e.enabled = !0;
-        const { passiveListener: s, activeListenerWithCapture: i } = q();
+        const { passiveListener: s, activeListenerWithCapture: i } = G();
         t.wrapperEl.addEventListener("pointerdown", L, s),
           t.wrapperEl.addEventListener("pointermove", P, i),
           ["pointerup", "pointercancel", "pointerout"].forEach((e) => {
@@ -5670,11 +5670,11 @@
           }),
           t.wrapperEl.addEventListener("pointermove", $, i);
       }
-      function H() {
+      function q() {
         const e = t.zoom;
         if (!e.enabled) return;
         e.enabled = !1;
-        const { passiveListener: s, activeListenerWithCapture: i } = q();
+        const { passiveListener: s, activeListenerWithCapture: i } = G();
         t.wrapperEl.removeEventListener("pointerdown", L, s),
           t.wrapperEl.removeEventListener("pointermove", P, i),
           ["pointerup", "pointercancel", "pointerout"].forEach((e) => {
@@ -5694,10 +5694,10 @@
         },
       }),
         i("init", () => {
-          t.params.zoom.enabled && G();
+          t.params.zoom.enabled && H();
         }),
         i("destroy", () => {
-          H();
+          q();
         }),
         i("touchStart", (e, s) => {
           t.zoom.enabled &&
@@ -5749,14 +5749,14 @@
             D(s);
         }),
         i("transitionEnd", () => {
-          t.zoom.enabled && t.params.zoom.enabled && _();
+          t.zoom.enabled && t.params.zoom.enabled && k();
         }),
         i("slideChange", () => {
-          t.zoom.enabled && t.params.zoom.enabled && t.params.cssMode && _();
+          t.zoom.enabled && t.params.zoom.enabled && t.params.cssMode && k();
         }),
         Object.assign(t.zoom, {
-          enable: G,
-          disable: H,
+          enable: H,
+          disable: q,
           in: I,
           out: z,
           toggle: D,
@@ -7991,43 +7991,50 @@
       : parseFloat(e);
   }
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("#productTable th").forEach((e, t) => {
-      e.addEventListener("click", () =>
-        (function (e) {
-          const t = document.getElementById("productTable"),
-            s = t.tBodies[0],
-            i = Array.from(s.rows);
-          (ye[e] = !ye[e]),
-            t
-              .querySelectorAll("th")
-              .forEach((e) => e.classList.remove("sort-asc", "sort-desc")),
-            t
-              .querySelectorAll("th")
-              [e].classList.add(ye[e] ? "sort-asc" : "sort-desc"),
-            i.sort((t, s) => {
-              let i, a;
-              0 === e
-                ? ((i = t.cells[0]
-                    .querySelector(".top-collection__table__name__title")
-                    .innerText.trim()),
-                  (a = s.cells[0]
-                    .querySelector(".top-collection__table__name__title")
-                    .innerText.trim()))
-                : ((i = t.cells[e].innerText.trim()),
-                  (a = s.cells[e].innerText.trim()));
-              const r = Ee(i),
-                n = Ee(a);
-              return (
-                isNaN(r) || isNaN(n)
-                  ? ((i = i.toLowerCase()), (a = a.toLowerCase()))
-                  : ((i = r), (a = n)),
-                i < a ? (ye[e] ? -1 : 1) : i > a ? (ye[e] ? 1 : -1) : 0
-              );
-            }),
-            (s.innerHTML = ""),
-            i.forEach((e) => s.appendChild(e));
-        })(t),
-      );
+    [
+      {
+        id: "statsTable",
+        selector: ".leaderboard__table__creator__name__title",
+      },
+      {
+        id: "productTable",
+        selector: ".top-collection__table__creator__name__title",
+      },
+    ].forEach(({ id: e, selector: t }) => {
+      document.querySelectorAll(`#${e} th`).forEach((s, i) => {
+        s.addEventListener("click", () =>
+          (function (e, t, s) {
+            const i = document.getElementById(e),
+              a = i.tBodies[0],
+              r = Array.from(a.rows);
+            (ye[t] = !ye[t]),
+              i
+                .querySelectorAll("th")
+                .forEach((e) => e.classList.remove("sort-asc", "sort-desc")),
+              i
+                .querySelectorAll("th")
+                [t].classList.add(ye[t] ? "sort-asc" : "sort-desc"),
+              r.sort((e, i) => {
+                let a, r;
+                0 === t && s
+                  ? ((a = e.cells[0].querySelector(s)?.innerText.trim() || ""),
+                    (r = i.cells[0].querySelector(s)?.innerText.trim() || ""))
+                  : ((a = e.cells[t].innerText.trim()),
+                    (r = i.cells[t].innerText.trim()));
+                const n = Ee(a),
+                  l = Ee(r);
+                return (
+                  isNaN(n) || isNaN(l)
+                    ? ((a = a.toLowerCase()), (r = r.toLowerCase()))
+                    : ((a = n), (r = l)),
+                  a < r ? (ye[t] ? -1 : 1) : a > r ? (ye[t] ? 1 : -1) : 0
+                );
+              }),
+              (a.innerHTML = ""),
+              r.forEach((e) => a.appendChild(e));
+          })(e, i, t),
+        );
+      });
     });
   }),
     document
@@ -8084,46 +8091,6 @@
             t.contains(s.target) ||
             (t.classList.add("hidden"), t.classList.remove("visible"));
         });
-    }),
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("#statsTable th").forEach((e, t) => {
-        e.addEventListener("click", () =>
-          (function (e) {
-            const t = document.getElementById("statsTable"),
-              s = t.tBodies[0],
-              i = Array.from(s.rows);
-            (ye[e] = !ye[e]),
-              t
-                .querySelectorAll("th")
-                .forEach((e) => e.classList.remove("sort-asc", "sort-desc")),
-              t
-                .querySelectorAll("th")
-                [e].classList.add(ye[e] ? "sort-asc" : "sort-desc"),
-              i.sort((t, s) => {
-                let i, a;
-                0 === e
-                  ? ((i = t.cells[0]
-                      .querySelector(".leaderboard__table__name__title")
-                      .innerText.trim()),
-                    (a = s.cells[0]
-                      .querySelector(".leaderboard__table__name__title")
-                      .innerText.trim()))
-                  : ((i = t.cells[e].innerText.trim()),
-                    (a = s.cells[e].innerText.trim()));
-                const r = Ee(i),
-                  n = Ee(a);
-                return (
-                  isNaN(r) || isNaN(n)
-                    ? ((i = i.toLowerCase()), (a = a.toLowerCase()))
-                    : ((i = r), (a = n)),
-                  i < a ? (ye[e] ? -1 : 1) : i > a ? (ye[e] ? 1 : -1) : 0
-                );
-              }),
-              (s.innerHTML = ""),
-              i.forEach((e) => s.appendChild(e));
-          })(t),
-        );
-      });
     }),
     document.addEventListener("DOMContentLoaded", () => {
       const e = document.querySelector(".header__nav__burger"),
